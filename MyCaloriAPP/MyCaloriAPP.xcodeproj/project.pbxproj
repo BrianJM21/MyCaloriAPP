@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CEA8DE02297B4A4B0043A0B0 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CEA8DE01297B4A4B0043A0B0 /* FirebaseAnalytics */; };
+		CEA8DE04297B4A4B0043A0B0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CEA8DE03297B4A4B0043A0B0 /* FirebaseAuth */; };
+		CEA8DE06297B4A4B0043A0B0 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = CEA8DE05297B4A4B0043A0B0 /* FirebaseCrashlytics */; };
+		CEA8DE08297B4B2B0043A0B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEA8DE07297B4B2B0043A0B0 /* GoogleService-Info.plist */; };
 		CEC2C7022979CB02005818D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2C7012979CB02005818D2 /* AppDelegate.swift */; };
 		CEC2C7042979CB02005818D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2C7032979CB02005818D2 /* SceneDelegate.swift */; };
 		CEC2C7062979CB03005818D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2C7052979CB03005818D2 /* ViewController.swift */; };
@@ -36,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CEA8DE07297B4B2B0043A0B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEC2C6FE2979CB02005818D2 /* MyCaloriAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCaloriAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC2C7012979CB02005818D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEC2C7032979CB02005818D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +61,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA8DE06297B4A4B0043A0B0 /* FirebaseCrashlytics in Frameworks */,
+				CEA8DE02297B4A4B0043A0B0 /* FirebaseAnalytics in Frameworks */,
+				CEA8DE04297B4A4B0043A0B0 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +114,7 @@
 				CEC2C70A2979CB04005818D2 /* Assets.xcassets */,
 				CEC2C70C2979CB04005818D2 /* LaunchScreen.storyboard */,
 				CEC2C70F2979CB04005818D2 /* Info.plist */,
+				CEA8DE07297B4B2B0043A0B0 /* GoogleService-Info.plist */,
 			);
 			path = MyCaloriAPP;
 			sourceTree = "<group>";
@@ -143,6 +152,11 @@
 			dependencies = (
 			);
 			name = MyCaloriAPP;
+			packageProductDependencies = (
+				CEA8DE01297B4A4B0043A0B0 /* FirebaseAnalytics */,
+				CEA8DE03297B4A4B0043A0B0 /* FirebaseAuth */,
+				CEA8DE05297B4A4B0043A0B0 /* FirebaseCrashlytics */,
+			);
 			productName = MyCaloriAPP;
 			productReference = CEC2C6FE2979CB02005818D2 /* MyCaloriAPP.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +229,9 @@
 				Base,
 			);
 			mainGroup = CEC2C6F52979CB02005818D2;
+			packageReferences = (
+				CEA8DE00297B4A4B0043A0B0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = CEC2C6FF2979CB02005818D2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -232,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEC2C70E2979CB04005818D2 /* LaunchScreen.storyboard in Resources */,
+				CEA8DE08297B4B2B0043A0B0 /* GoogleService-Info.plist in Resources */,
 				CEC2C70B2979CB04005818D2 /* Assets.xcassets in Resources */,
 				CEC2C7092979CB03005818D2 /* Main.storyboard in Resources */,
 			);
@@ -444,6 +462,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -471,6 +490,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -596,6 +616,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CEA8DE00297B4A4B0043A0B0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CEA8DE01297B4A4B0043A0B0 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEA8DE00297B4A4B0043A0B0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		CEA8DE03297B4A4B0043A0B0 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEA8DE00297B4A4B0043A0B0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		CEA8DE05297B4A4B0043A0B0 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEA8DE00297B4A4B0043A0B0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CEC2C6F62979CB02005818D2 /* Project object */;
 }
