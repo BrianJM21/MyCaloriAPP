@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1912EC297F4EF1008E7228 /* MyCaloriAPP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE1912EA297F4EF1008E7228 /* MyCaloriAPP.xcdatamodeld */; };
+		CE1912EE297F4FDA008E7228 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1912ED297F4FDA008E7228 /* UserService.swift */; };
+		CE1912F0297F4FF9008E7228 /* RecipeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1912EF297F4FF9008E7228 /* RecipeService.swift */; };
+		CE1912F2297F51EC008E7228 /* UserDietEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1912F1297F51EC008E7228 /* UserDietEntity.swift */; };
 		CEA8DE02297B4A4B0043A0B0 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CEA8DE01297B4A4B0043A0B0 /* FirebaseAnalytics */; };
 		CEA8DE04297B4A4B0043A0B0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CEA8DE03297B4A4B0043A0B0 /* FirebaseAuth */; };
 		CEA8DE06297B4A4B0043A0B0 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = CEA8DE05297B4A4B0043A0B0 /* FirebaseCrashlytics */; };
@@ -40,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE1912EB297F4EF1008E7228 /* MyCaloriAPP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyCaloriAPP.xcdatamodel; sourceTree = "<group>"; };
+		CE1912ED297F4FDA008E7228 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		CE1912EF297F4FF9008E7228 /* RecipeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeService.swift; sourceTree = "<group>"; };
+		CE1912F1297F51EC008E7228 /* UserDietEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDietEntity.swift; sourceTree = "<group>"; };
 		CEA8DE07297B4B2B0043A0B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEC2C6FE2979CB02005818D2 /* MyCaloriAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCaloriAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC2C7012979CB02005818D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +92,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE1912E6297F4E7C008E7228 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CE1912EA297F4EF1008E7228 /* MyCaloriAPP.xcdatamodeld */,
+				CE1912ED297F4FDA008E7228 /* UserService.swift */,
+				CE1912EF297F4FF9008E7228 /* RecipeService.swift */,
+				CE1912F1297F51EC008E7228 /* UserDietEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		CE1912F3297F52C4008E7228 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		CE1912F4297F52E7008E7228 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		CE1912F5297F52F8008E7228 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE1912F6297F5305008E7228 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		CEC2C6F52979CB02005818D2 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +154,11 @@
 		CEC2C7002979CB02005818D2 /* MyCaloriAPP */ = {
 			isa = PBXGroup;
 			children = (
+				CE1912F6297F5305008E7228 /* Router */,
+				CE1912F5297F52F8008E7228 /* Views */,
+				CE1912F4297F52E7008E7228 /* Presenters */,
+				CE1912F3297F52C4008E7228 /* Interactor */,
+				CE1912E6297F4E7C008E7228 /* Entities */,
 				CEC2C7012979CB02005818D2 /* AppDelegate.swift */,
 				CEC2C7032979CB02005818D2 /* SceneDelegate.swift */,
 				CEC2C7052979CB03005818D2 /* ViewController.swift */,
@@ -277,6 +329,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEC2C7062979CB03005818D2 /* ViewController.swift in Sources */,
+				CE1912F2297F51EC008E7228 /* UserDietEntity.swift in Sources */,
+				CE1912F0297F4FF9008E7228 /* RecipeService.swift in Sources */,
+				CE1912EE297F4FDA008E7228 /* UserService.swift in Sources */,
+				CE1912EC297F4EF1008E7228 /* MyCaloriAPP.xcdatamodeld in Sources */,
 				CEC2C7022979CB02005818D2 /* AppDelegate.swift in Sources */,
 				CEC2C7042979CB02005818D2 /* SceneDelegate.swift in Sources */,
 			);
@@ -645,6 +701,19 @@
 			productName = FirebaseCrashlytics;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		CE1912EA297F4EF1008E7228 /* MyCaloriAPP.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CE1912EB297F4EF1008E7228 /* MyCaloriAPP.xcdatamodel */,
+			);
+			currentVersion = CE1912EB297F4EF1008E7228 /* MyCaloriAPP.xcdatamodel */;
+			path = MyCaloriAPP.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CEC2C6F62979CB02005818D2 /* Project object */;
 }
