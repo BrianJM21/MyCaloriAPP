@@ -11,6 +11,13 @@
 		CE1912EE297F4FDA008E7228 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1912ED297F4FDA008E7228 /* UserService.swift */; };
 		CE1912F0297F4FF9008E7228 /* RecipeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1912EF297F4FF9008E7228 /* RecipeService.swift */; };
 		CE1912F2297F51EC008E7228 /* UserDietEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1912F1297F51EC008E7228 /* UserDietEntity.swift */; };
+		CE1912F8297F5454008E7228 /* UserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1912F7297F5454008E7228 /* UserInteractor.swift */; };
+		CE1912FA297F5477008E7228 /* DietInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1912F9297F5477008E7228 /* DietInteractor.swift */; };
+		CE1912FC297F54A9008E7228 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1912FB297F54A9008E7228 /* HomePresenter.swift */; };
+		CE1912FE297F54CE008E7228 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1912FD297F54CE008E7228 /* HomeView.swift */; };
+		CE191301297F5514008E7228 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1912FF297F5514008E7228 /* HomeViewController.swift */; };
+		CE191302297F5514008E7228 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE191300297F5514008E7228 /* HomeViewController.xib */; };
+		CE191304297F55BA008E7228 /* CaloriappRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE191303297F55BA008E7228 /* CaloriappRouter.swift */; };
 		CEA8DE02297B4A4B0043A0B0 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CEA8DE01297B4A4B0043A0B0 /* FirebaseAnalytics */; };
 		CEA8DE04297B4A4B0043A0B0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CEA8DE03297B4A4B0043A0B0 /* FirebaseAuth */; };
 		CEA8DE06297B4A4B0043A0B0 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = CEA8DE05297B4A4B0043A0B0 /* FirebaseCrashlytics */; };
@@ -48,6 +55,13 @@
 		CE1912ED297F4FDA008E7228 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		CE1912EF297F4FF9008E7228 /* RecipeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeService.swift; sourceTree = "<group>"; };
 		CE1912F1297F51EC008E7228 /* UserDietEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDietEntity.swift; sourceTree = "<group>"; };
+		CE1912F7297F5454008E7228 /* UserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractor.swift; sourceTree = "<group>"; };
+		CE1912F9297F5477008E7228 /* DietInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietInteractor.swift; sourceTree = "<group>"; };
+		CE1912FB297F54A9008E7228 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		CE1912FD297F54CE008E7228 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		CE1912FF297F5514008E7228 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CE191300297F5514008E7228 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		CE191303297F55BA008E7228 /* CaloriappRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriappRouter.swift; sourceTree = "<group>"; };
 		CEA8DE07297B4B2B0043A0B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEC2C6FE2979CB02005818D2 /* MyCaloriAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCaloriAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC2C7012979CB02005818D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +120,8 @@
 		CE1912F3297F52C4008E7228 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				CE1912F7297F5454008E7228 /* UserInteractor.swift */,
+				CE1912F9297F5477008E7228 /* DietInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -113,6 +129,7 @@
 		CE1912F4297F52E7008E7228 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				CE1912FB297F54A9008E7228 /* HomePresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -120,6 +137,9 @@
 		CE1912F5297F52F8008E7228 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CE1912FD297F54CE008E7228 /* HomeView.swift */,
+				CE1912FF297F5514008E7228 /* HomeViewController.swift */,
+				CE191300297F5514008E7228 /* HomeViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -127,6 +147,7 @@
 		CE1912F6297F5305008E7228 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				CE191303297F55BA008E7228 /* CaloriappRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -302,6 +323,7 @@
 			files = (
 				CEC2C70E2979CB04005818D2 /* LaunchScreen.storyboard in Resources */,
 				CEA8DE08297B4B2B0043A0B0 /* GoogleService-Info.plist in Resources */,
+				CE191302297F5514008E7228 /* HomeViewController.xib in Resources */,
 				CEC2C70B2979CB04005818D2 /* Assets.xcassets in Resources */,
 				CEC2C7092979CB03005818D2 /* Main.storyboard in Resources */,
 			);
@@ -329,12 +351,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEC2C7062979CB03005818D2 /* ViewController.swift in Sources */,
+				CE1912F8297F5454008E7228 /* UserInteractor.swift in Sources */,
 				CE1912F2297F51EC008E7228 /* UserDietEntity.swift in Sources */,
+				CE1912FC297F54A9008E7228 /* HomePresenter.swift in Sources */,
+				CE1912FA297F5477008E7228 /* DietInteractor.swift in Sources */,
+				CE1912FE297F54CE008E7228 /* HomeView.swift in Sources */,
 				CE1912F0297F4FF9008E7228 /* RecipeService.swift in Sources */,
 				CE1912EE297F4FDA008E7228 /* UserService.swift in Sources */,
 				CE1912EC297F4EF1008E7228 /* MyCaloriAPP.xcdatamodeld in Sources */,
 				CEC2C7022979CB02005818D2 /* AppDelegate.swift in Sources */,
+				CE191304297F55BA008E7228 /* CaloriappRouter.swift in Sources */,
 				CEC2C7042979CB02005818D2 /* SceneDelegate.swift in Sources */,
+				CE191301297F5514008E7228 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
