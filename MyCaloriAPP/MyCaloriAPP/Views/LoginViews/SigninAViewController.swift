@@ -9,6 +9,8 @@ import UIKit
 
 class SigninAViewController: UIViewController {
 
+    weak var presenter: SigninAPresenter?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,4 +28,8 @@ class SigninAViewController: UIViewController {
     }
     */
 
+}
+
+extension SigninAViewController: SigninAView {
+    
 }

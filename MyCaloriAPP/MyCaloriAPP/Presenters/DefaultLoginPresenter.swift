@@ -9,6 +9,31 @@ import Foundation
 
 
 class DefaultLoginPresenter {
+    // Router
+    weak var router: CaloriappRouter?
+    
+    // Interactor
+    weak var interactor: UserInteractor?
+    
+    // View & ViewController
+    weak var view: DefaultLoginView?
+    
+    lazy var viewController: DefaultLoginViewController = {
+        let viewController = DefaultLoginViewController()
+        viewController.presenter = self
+        self.view = viewController
+        return viewController
+    }()
+    // Connects & Disconnects
+    
+    func connectInteractor(interactor: UserInteractor) {
+        
+        self.interactor = interactor
+    }
+    func disconnectInteractor() {
+        
+        self.interactor = nil
+    }
     
     
 }

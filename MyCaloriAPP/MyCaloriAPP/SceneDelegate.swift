@@ -10,33 +10,21 @@ import CoreData
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
-    // Se crea el contenedor persistente para cargar la información
-    // almacenada en el CoreData
-    lazy var container: NSPersistentContainer = {
-        
-        let container = NSPersistentContainer(name: "MyCaloriAPP")
-        
-        container.loadPersistentStores {
-            
-            _, error in
-            
-            if let error = error {
-                
-                fatalError("Error: al intentar cargar el contenedor (CoreData): \(error)")
-            }
-        }
-        
-        return container
-    }()
-
     var window: UIWindow?
 
-
+    lazy var router: CaloriappRouter = {
+        let router = CaloriappRouter()
+        return router
+    }()
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        self.window?.rootViewController = self.router.navigationController
+        self.window?.makeKeyAndVisible()
+        self.router.goToLoginB()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

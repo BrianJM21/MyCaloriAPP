@@ -8,7 +8,7 @@
 import Foundation
 
 
-protocol SigninBView {
+protocol SigninBView: NSObject {
     
     
 }

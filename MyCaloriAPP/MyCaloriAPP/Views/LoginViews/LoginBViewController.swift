@@ -9,6 +9,8 @@ import UIKit
 
 class LoginBViewController: UIViewController {
 
+    weak var presenter: LoginBPresenter?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,4 +28,8 @@ class LoginBViewController: UIViewController {
     }
     */
 
+}
+
+extension LoginBViewController: LoginBView {
+    
 }
