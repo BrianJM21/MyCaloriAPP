@@ -58,13 +58,13 @@ class CaloriappRouter: NSObject, UINavigationControllerDelegate {
         return presenter
     }()
     
-    lazy var signinA: SigninAPresenter = {
+    lazy var signinAPresenter: SigninAPresenter = {
         let presenter = SigninAPresenter()
         presenter.router = self
         return presenter
     }()
     
-    lazy var signinB: SigninBPresenter = {
+    lazy var signinBPresenter: SigninBPresenter = {
        let presenter = SigninBPresenter()
         presenter.router = self
         return presenter
@@ -72,14 +72,14 @@ class CaloriappRouter: NSObject, UINavigationControllerDelegate {
     
     // Navigations
     
-    func goToLoginDefault() {
+    func goToDefaultLogin() {
         
         self.defaultLoginPresenter.connectInteractor(interactor: self.userInteractor)
         self.navigationController.pushViewController(defaultLoginPresenter.viewController, animated: true)
         
     }
     
-    func closeLoginDefault() {
+    func closeDefaultLogin() {
         self.navigationController.popViewController(animated: true)
         self.defaultLoginPresenter.disconnectInteractor()
     }
@@ -123,4 +123,25 @@ class CaloriappRouter: NSObject, UINavigationControllerDelegate {
         self.navigationController.popViewController(animated: true)
         self.loginPasswordPresenter.disconnectInteractor()
     }
+    
+    func gotoSigninA() {
+        self.signinAPresenter.connectInteractor(interactor: self.userInteractor)
+        self.navigationController.pushViewController(signinAPresenter.viewController, animated: true)
+    }
+    
+    func closeSigninA() {
+        self.navigationController.popViewController(animated: true)
+        self.signinAPresenter.disconnectInteractor()
+    }
+    
+    func gotoSigninB() {
+        self.signinBPresenter.connectInteractor(interactor: self.userInteractor)
+        self.navigationController.pushViewController(signinBPresenter.viewController, animated: true)
+    }
+    
+    func closeSigninB() {
+        self.navigationController.popViewController(animated: true)
+        self.signinBPresenter.disconnectInteractor()
+    }
+    
 }
