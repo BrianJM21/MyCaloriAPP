@@ -12,37 +12,51 @@ import CoreData
 
 class UserService {
     
+    // Enums del UserService
+    
+    
     // Propiedades del UserService
     var activeUser: UserEntity?
     
     // Publicadores del UserService
-    
+    var verifyEmailAlredySignedUpSubject = PassthroughSubject<Bool, Error>()
     
     // Funcionalidades del UserService
     
-    // En el proceso de registro, verifica si el correo se encuentra registrado
+    // Verifica si el correo ya se encuentra registrado en Firebase
     func verifyEmailAlredySignedUp(_ email: String) {
         
-        Auth.auth().signIn(withEmail: email, password: "_") {
+        Auth.auth().fetchSignInMethods(forEmail: email) {
             
-            _, error in
+            [weak self] signInMethods, error in
             
-            if let x = error {
+            if let error = error {
                 
-                let err = x as NSError
+                print("Error al tratar de verificar si el correo electrónico ya se encuentra registrado en FireBase \(error.localizedDescription)")
+                self?.verifyEmailAlredySignedUpSubject.send(completion: .failure(error))
+            } else {
                 
-                switch err.code {
+                if let _ = signInMethods {
                     
-                    // Email ya existe en la FireBase
-                case AuthErrorCode.wrongPassword.rawValue: print("wrong password")
+                    print("El correo ya se encuentra registrado en FireBase")
+                    self?.verifyEmailAlredySignedUpSubject.send(true)
+                } else {
                     
-                    // Email no exitse en FireBase
-                default: print("unknown error: \(err.localizedDescription)")
-
+                    print("El correo no se encuentra registrado en FireBase")
+                    self?.verifyEmailAlredySignedUpSubject.send(false)
                 }
             }
         }
     }
     
+    func signUpEmailAndPassword {
+        
+        
+    }
+    
+    func signUpUserProfile {
+        
+        
+    }
     
 }
