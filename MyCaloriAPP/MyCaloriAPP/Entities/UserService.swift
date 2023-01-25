@@ -23,6 +23,28 @@ class UserService {
     
     // Funcionalidades del UserService
     
+    // Contenedor persistente del UserService
+    
+    let userServiceContainer: NSPersistentContainer = {
+        
+        lazy var container = NSPersistentContainer(name: "MyCaloriAPP")
+        
+        container.loadPersistentStores {
+            
+            _, error in
+            
+            if let error = error {
+                
+                fatalError("[UserService] El contenedor persistente no pudo ser creado")
+            } else {
+                
+                print("[UserService] El contenedor persistente se creó correctamente")
+            }
+        }
+        
+        return container
+    }()
+    
     // Verifica si el correo ya se encuentra registrado en Firebase
     func verifyEmailAlredySignedUp(_ email: String) {
         
@@ -49,12 +71,12 @@ class UserService {
         }
     }
     
-    func signUpEmailAndPassword {
+    func signUpEmailAndPassword() {
         
         
     }
     
-    func signUpUserProfile {
+    func signUpUserProfile() {
         
         
     }

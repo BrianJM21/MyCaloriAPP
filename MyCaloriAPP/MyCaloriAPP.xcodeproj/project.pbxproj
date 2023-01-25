@@ -39,6 +39,13 @@
 		CE19132B297F5AB7008E7228 /* SigninBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19132A297F5AB7008E7228 /* SigninBView.swift */; };
 		CE19132E297F5ADB008E7228 /* SigninBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19132C297F5ADB008E7228 /* SigninBViewController.swift */; };
 		CE19132F297F5ADB008E7228 /* SigninBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE19132D297F5ADB008E7228 /* SigninBViewController.xib */; };
+		CE2D3B1F2981849D00918CC2 /* DefaultLoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D3B1E2981849D00918CC2 /* DefaultLoginPresenter.swift */; };
+		CE2D3B21298184C200918CC2 /* LoginAPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D3B20298184C200918CC2 /* LoginAPresenter.swift */; };
+		CE2D3B23298184D200918CC2 /* LoginBPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D3B22298184D200918CC2 /* LoginBPresenter.swift */; };
+		CE2D3B25298184F500918CC2 /* LoginPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D3B24298184F500918CC2 /* LoginPasswordPresenter.swift */; };
+		CE2D3B272981851400918CC2 /* LoginTouchIdPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D3B262981851400918CC2 /* LoginTouchIdPresenter.swift */; };
+		CE2D3B292981853800918CC2 /* SigninAPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D3B282981853800918CC2 /* SigninAPresenter.swift */; };
+		CE2D3B2B2981855500918CC2 /* SigninBPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D3B2A2981855500918CC2 /* SigninBPresenter.swift */; };
 		CEA8DE02297B4A4B0043A0B0 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CEA8DE01297B4A4B0043A0B0 /* FirebaseAnalytics */; };
 		CEA8DE04297B4A4B0043A0B0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CEA8DE03297B4A4B0043A0B0 /* FirebaseAuth */; };
 		CEA8DE06297B4A4B0043A0B0 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = CEA8DE05297B4A4B0043A0B0 /* FirebaseCrashlytics */; };
@@ -105,6 +112,13 @@
 		CE19132A297F5AB7008E7228 /* SigninBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninBView.swift; sourceTree = "<group>"; };
 		CE19132C297F5ADB008E7228 /* SigninBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninBViewController.swift; sourceTree = "<group>"; };
 		CE19132D297F5ADB008E7228 /* SigninBViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SigninBViewController.xib; sourceTree = "<group>"; };
+		CE2D3B1E2981849D00918CC2 /* DefaultLoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLoginPresenter.swift; sourceTree = "<group>"; };
+		CE2D3B20298184C200918CC2 /* LoginAPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPresenter.swift; sourceTree = "<group>"; };
+		CE2D3B22298184D200918CC2 /* LoginBPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBPresenter.swift; sourceTree = "<group>"; };
+		CE2D3B24298184F500918CC2 /* LoginPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordPresenter.swift; sourceTree = "<group>"; };
+		CE2D3B262981851400918CC2 /* LoginTouchIdPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTouchIdPresenter.swift; sourceTree = "<group>"; };
+		CE2D3B282981853800918CC2 /* SigninAPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninAPresenter.swift; sourceTree = "<group>"; };
+		CE2D3B2A2981855500918CC2 /* SigninBPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninBPresenter.swift; sourceTree = "<group>"; };
 		CEA8DE07297B4B2B0043A0B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEC2C6FE2979CB02005818D2 /* MyCaloriAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCaloriAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC2C7012979CB02005818D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +189,13 @@
 			isa = PBXGroup;
 			children = (
 				CE1912FB297F54A9008E7228 /* HomePresenter.swift */,
+				CE2D3B1E2981849D00918CC2 /* DefaultLoginPresenter.swift */,
+				CE2D3B20298184C200918CC2 /* LoginAPresenter.swift */,
+				CE2D3B22298184D200918CC2 /* LoginBPresenter.swift */,
+				CE2D3B24298184F500918CC2 /* LoginPasswordPresenter.swift */,
+				CE2D3B262981851400918CC2 /* LoginTouchIdPresenter.swift */,
+				CE2D3B282981853800918CC2 /* SigninAPresenter.swift */,
+				CE2D3B2A2981855500918CC2 /* SigninBPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -436,12 +457,17 @@
 				CE191319297F59A4008E7228 /* LoginPasswordView.swift in Sources */,
 				CE19130C297F58E3008E7228 /* LoginAView.swift in Sources */,
 				CE191309297F58BD008E7228 /* DefaultLoginViewController.swift in Sources */,
+				CE2D3B1F2981849D00918CC2 /* DefaultLoginPresenter.swift in Sources */,
 				CEC2C7062979CB03005818D2 /* ViewController.swift in Sources */,
+				CE2D3B272981851400918CC2 /* LoginTouchIdPresenter.swift in Sources */,
 				CE1912F8297F5454008E7228 /* UserInteractor.swift in Sources */,
 				CE1912F2297F51EC008E7228 /* UserFoodEntity.swift in Sources */,
 				CE1912FC297F54A9008E7228 /* HomePresenter.swift in Sources */,
 				CE19132B297F5AB7008E7228 /* SigninBView.swift in Sources */,
+				CE2D3B292981853800918CC2 /* SigninAPresenter.swift in Sources */,
 				CE1912FA297F5477008E7228 /* DietInteractor.swift in Sources */,
+				CE2D3B21298184C200918CC2 /* LoginAPresenter.swift in Sources */,
+				CE2D3B23298184D200918CC2 /* LoginBPresenter.swift in Sources */,
 				CE1912FE297F54CE008E7228 /* HomeView.swift in Sources */,
 				CE19131F297F59DA008E7228 /* LoginTouchIdView.swift in Sources */,
 				CE1912F0297F4FF9008E7228 /* DietService.swift in Sources */,
@@ -454,7 +480,9 @@
 				CE19132E297F5ADB008E7228 /* SigninBViewController.swift in Sources */,
 				CE191304297F55BA008E7228 /* CaloriappRouter.swift in Sources */,
 				CEC2C7042979CB02005818D2 /* SceneDelegate.swift in Sources */,
+				CE2D3B2B2981855500918CC2 /* SigninBPresenter.swift in Sources */,
 				CE191322297F59FF008E7228 /* LoginTouchIdViewController.swift in Sources */,
+				CE2D3B25298184F500918CC2 /* LoginPasswordPresenter.swift in Sources */,
 				CE191306297F5897008E7228 /* DefaultLoginView.swift in Sources */,
 				CE191328297F5A99008E7228 /* SigninAViewController.swift in Sources */,
 				CE191301297F5514008E7228 /* HomeViewController.swift in Sources */,

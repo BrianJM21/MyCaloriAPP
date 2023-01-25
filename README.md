@@ -26,3 +26,4 @@ ChangeLog [yy/mm/dd] <dev name> - <change description>
 [23/01/23] <Brian> - <Se agregó el link al Figma del proyecto>
 [24/01/23] <Eduardo> - <Avance de los Login View>
 [24/01/23] <Brian> - <Avance de los User y Diet Services>
+[25/01/23] <Brian> - <Se crearon las clases de los Presenters para las vistas de LogIn y Resgistro>
