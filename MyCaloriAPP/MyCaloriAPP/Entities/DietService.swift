@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import CoreData
 
 class DietService {
     
@@ -65,6 +66,28 @@ class DietService {
     var selectWeekDaySubject = PassthroughSubject<(Int, DietServiceError), Never>()*/
     
     // Funcionalidad del DietService
+    
+    // Contenedor persistente del UserService
+    
+    private lazy var dietServiceContainer: NSPersistentContainer = {
+        
+        let container = NSPersistentContainer(name: "MyCaloriAPP")
+        
+        container.loadPersistentStores {
+            
+            _, error in
+            
+            if let error = error {
+                
+                fatalError("[DietService] El contenedor persistente no pudo ser creado")
+            } else {
+                
+                print("[DietService] El contenedor persistente se creó correctamente")
+            }
+        }
+        
+        return container
+    }()
     
     // Actualiza el selectedWeekDayId según el día de la semana seleccionado
     func selectWeekDay(_ weekday: WeekDay) {
