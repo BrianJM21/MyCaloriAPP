@@ -26,45 +26,48 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="780"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My CaloriAPP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HY7-Oy-LSo">
-                                    <rect key="frame" x="83" y="190" width="248" height="36"/>
+                                    <rect key="frame" x="83" y="140" width="248" height="36"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n11-0n-jZw">
-                                    <rect key="frame" x="37" y="346" width="340" height="60"/>
-                                    <color key="backgroundColor" red="0.32549019607843138" green="0.74509803921568629" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="340" id="PqO-Pr-kEX"/>
-                                        <constraint firstAttribute="height" constant="60" id="sAb-Q0-DKo"/>
-                                    </constraints>
-                                    <color key="tintColor" red="0.96655096780000005" green="0.95988509899999996" blue="0.97321683650000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title="Iniciar Sesión"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Iniciar Sesión"/>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmv-ip-NiX">
-                                    <rect key="frame" x="37" y="421" width="340" height="60"/>
-                                    <color key="backgroundColor" red="0.32549019607843138" green="0.74509803921568629" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="60" id="3z6-zH-nG9"/>
-                                        <constraint firstAttribute="width" constant="340" id="kG7-uL-nL9"/>
-                                    </constraints>
-                                    <color key="tintColor" red="0.96470588235294119" green="0.96078431372549022" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Registrarse"/>
-                                </button>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xLL-dM-jq6">
+                                    <rect key="frame" x="37" y="236" width="340" height="135"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n11-0n-jZw">
+                                            <rect key="frame" x="0.0" y="0.0" width="340" height="60"/>
+                                            <color key="backgroundColor" red="0.32549019607843138" green="0.74509803921568629" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="340" id="PqO-Pr-kEX"/>
+                                                <constraint firstAttribute="height" constant="60" id="sAb-Q0-DKo"/>
+                                            </constraints>
+                                            <color key="tintColor" red="0.96655096780000005" green="0.95988509899999996" blue="0.97321683650000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Iniciar Sesión"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Iniciar Sesión"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmv-ip-NiX">
+                                            <rect key="frame" x="0.0" y="75" width="340" height="60"/>
+                                            <color key="backgroundColor" red="0.32549019607843138" green="0.74509803921568629" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="60" id="3z6-zH-nG9"/>
+                                                <constraint firstAttribute="width" constant="340" id="kG7-uL-nL9"/>
+                                            </constraints>
+                                            <color key="tintColor" red="0.96470588235294119" green="0.96078431372549022" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Registrarse"/>
+                                        </button>
+                                    </subviews>
+                                </stackView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="HY7-Oy-LSo" firstAttribute="leading" secondItem="rdw-W3-ohP" secondAttribute="leading" constant="83" id="0N8-Zh-xJI"/>
                                 <constraint firstItem="HY7-Oy-LSo" firstAttribute="centerX" secondItem="rdw-W3-ohP" secondAttribute="centerX" id="3Fv-b3-LU4"/>
-                                <constraint firstItem="n11-0n-jZw" firstAttribute="top" secondItem="HY7-Oy-LSo" secondAttribute="bottom" constant="120" id="J8a-hM-DeH"/>
-                                <constraint firstItem="HY7-Oy-LSo" firstAttribute="top" secondItem="rdw-W3-ohP" secondAttribute="top" constant="190" id="L7V-of-JqQ"/>
-                                <constraint firstItem="n11-0n-jZw" firstAttribute="centerX" secondItem="rdw-W3-ohP" secondAttribute="centerX" id="QGb-Mh-QwS"/>
-                                <constraint firstItem="jmv-ip-NiX" firstAttribute="top" secondItem="n11-0n-jZw" secondAttribute="bottom" constant="15" id="SgJ-wb-IbW"/>
+                                <constraint firstItem="HY7-Oy-LSo" firstAttribute="top" secondItem="rdw-W3-ohP" secondAttribute="top" constant="140" id="L7V-of-JqQ"/>
+                                <constraint firstItem="xLL-dM-jq6" firstAttribute="centerX" secondItem="rdw-W3-ohP" secondAttribute="centerX" id="ZgY-on-tMQ"/>
+                                <constraint firstItem="xLL-dM-jq6" firstAttribute="top" secondItem="HY7-Oy-LSo" secondAttribute="bottom" constant="60" id="dSJ-yf-IDf"/>
                                 <constraint firstAttribute="height" constant="780" id="fdD-KX-NV4"/>
-                                <constraint firstItem="jmv-ip-NiX" firstAttribute="centerX" secondItem="rdw-W3-ohP" secondAttribute="centerX" id="ft9-ST-kfk"/>
                             </constraints>
                         </view>
                     </subviews>
