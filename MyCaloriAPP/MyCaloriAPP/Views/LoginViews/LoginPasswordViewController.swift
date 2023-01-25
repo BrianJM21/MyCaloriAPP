@@ -9,6 +9,8 @@ import UIKit
 
 class LoginPasswordViewController: UIViewController {
 
+    weak var presenter: LoginPasswordPresenter?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,4 +28,8 @@ class LoginPasswordViewController: UIViewController {
     }
     */
 
+}
+
+extension LoginPasswordViewController: LoginPasswordView {
+    
 }

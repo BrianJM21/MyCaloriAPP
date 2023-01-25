@@ -9,6 +9,8 @@ import UIKit
 
 class LoginTouchIdViewController: UIViewController {
 
+    weak var presenter: LoginTouchIdPresenter?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,4 +28,7 @@ class LoginTouchIdViewController: UIViewController {
     }
     */
 
+}
+extension LoginTouchIdViewController: LoginTouchIdView {
+    
 }

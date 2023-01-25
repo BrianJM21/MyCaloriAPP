@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -16,23 +16,23 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zvz-Yf-S4M">
-                    <rect key="frame" x="0.0" y="59" width="393" height="780"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="780"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdw-W3-ohP">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="780"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="780"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My CaloriAPP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HY7-Oy-LSo">
-                                    <rect key="frame" x="83" y="190" width="227" height="36"/>
+                                    <rect key="frame" x="83" y="190" width="248" height="36"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n11-0n-jZw">
-                                    <rect key="frame" x="26.666666666666657" y="346" width="340" height="60"/>
+                                    <rect key="frame" x="37" y="346" width="340" height="60"/>
                                     <color key="backgroundColor" red="0.32549019607843138" green="0.74509803921568629" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="340" id="PqO-Pr-kEX"/>
@@ -44,7 +44,7 @@
                                     <buttonConfiguration key="configuration" style="plain" title="Iniciar Sesión"/>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmv-ip-NiX">
-                                    <rect key="frame" x="26.666666666666657" y="421" width="340" height="60"/>
+                                    <rect key="frame" x="37" y="421" width="340" height="60"/>
                                     <color key="backgroundColor" red="0.32549019607843138" green="0.74509803921568629" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="3z6-zH-nG9"/>

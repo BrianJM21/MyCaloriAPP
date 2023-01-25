@@ -8,7 +8,9 @@
 import UIKit
 
 class DefaultLoginViewController: UIViewController {
-
+    
+    weak var presenter: DefaultLoginPresenter?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,4 +28,8 @@ class DefaultLoginViewController: UIViewController {
     }
     */
 
+}
+
+extension DefaultLoginViewController: DefaultLoginView {
+    
 }
