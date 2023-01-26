@@ -15,22 +15,23 @@ class UserService {
     // Enums del UserService
     enum UserServiceError: String, Error {
         
-        case contextRequestError = "Falló la carga del contexto del UserEntity"
+        case contextRequestError = "Error: falló la carga del contexto del UserEntity"
         case emailNotFoundError = "Error: el correo no se encuetra registrado en FireBase"
         case verifyEmailRequestError = "Error: solicitud de consulta invalida"
-        case signUpRequestError = "Error: solicitud invalida al tratar de dar de alta correo y contraseña en FireBase"
-        case signUpResponseError = "No se pudo dar de alta el correo electrónico en FireBase, usuario regresó como nulo"
-        case signUpUserProfileError = "Error al crear perfil de usuario, no se pudo guardar en el contexto del UserEntity"
-        case loginWithEmailAndPasswordErrorContextNil = "Error al recuperar el contexto del UserEntity, valor es nulo"
-        case loginWithEmailAndPasswordErrorResultNil = "Error al loguear al usuario en FireBase, el resultado es nulo"
-        case loginWithEmailAndPasswordErrorProfileNil = "Error al cargar perfil de usuario, no existe en el dispositivo local"
+        case signUpRequestError = "Error: solicitud inválida al tratar de dar de alta correo y contraseña en FireBase"
+        case signUpResponseError = "Error: no se pudo dar de alta el correo electrónico en FireBase, usuario regresó como nulo"
+        case signUpUserProfileError = "Error: el perfil de usuario no se pudo guardar en el contexto del UserEntity"
+        case loginWithEmailAndPasswordError = "Error: petición de login inválida"
+        case loginWithEmailAndPasswordContextNilError = "Error: al recuperar el contexto del UserEntity, su valor es nulo"
+        case loginWithEmailAndPasswordResultNilError = "Error: al loguear al usuario en FireBase, el resultado es nulo"
+        case loginWithEmailAndPasswordProfileNilError = "Error: al cargar perfil de usuario, no existe en el dispositivo local"
         case userToggleRememberMeErrorUserNil = "Error al actualizar propiedad rememberMe, no existe perfil de usuario local para el correo electrónico verificado"
         case userToggleRememberMeErrorContext = "Error al actualizar propiedad rememberMe, no se pudo guardar el contexto de UserEntity"
         case userToggleTouchIdErrorActiveUserNil = "Error al actualizar propiedad touchId, el usuario activo es nil"
         case userToggleTouchIdErrorContext = "Error al actualizar propiedad touchId, no se pudo guardar el contexto de UserEntity"
         case isAUserRememberedError = "No hay usuario recordado localmente"
-        case logoutActiveUserErrorActiveUserNil = "Error al cerrar la sesión actual, no existe usuario activo"
-        case logoutActiveUserErrorLogoutFailed = "Error al cerrar la sesión actual"
+        case logoutActiveUserIsNilError = "Error: no se pudo cerrar la sesión, no existe usuario activo"
+        case logoutFailedError = "Error: ocurrió un problema al cerrar la sesión actual"
     }
     
     // Propiedades del UserService
@@ -64,14 +65,14 @@ class UserService {
     // Publicadores del UserService
     var loadCoreDataUsersSubject = PassthroughSubject<(users: [UserEntity]?, error: UserServiceError?), Never>()
     var verifyEmailAlredySignedUpSubject = PassthroughSubject<(email: String?, error: UserServiceError?), Never>()
-    var signUpEmailAndPasswordSubject = PassthroughSubject<(user: FirebaseAuth.User?, error: UserServiceError?), Never>()
+    var signUpEmailAndPasswordSubject = PassthroughSubject<(user: (email: String, password: String, uid: String)?, error: UserServiceError?), Never>()
     var signUpUserProfileSubject = PassthroughSubject<(user: UserEntity?, error: UserServiceError?), Never>()
-    var loginWithEmailAndPasswordSubject = PassthroughSubject<UserEntity, UserServiceError>()
+    var loginWithEmailAndPasswordSubject = PassthroughSubject<(activeUser: UserEntity?, error: UserServiceError?), Never>()
     var userToggleRememberMeSubject = PassthroughSubject<UserEntity, UserServiceError>()
     var userToggleTouchIdSubject = PassthroughSubject<UserEntity, UserServiceError>()
     var isAUserRememberedSubject = PassthroughSubject<UserEntity, UserServiceError>()
     var isUserTouchIdActiveSubject = PassthroughSubject<Bool, UserServiceError>()
-    var logoutActiveUserSubject = PassthroughSubject<Bool, UserServiceError>()
+    var logoutActiveUserSubject = PassthroughSubject<(success: Bool?, error: UserServiceError?), Never>()
     
     // FUNCIONALIDADES DEL USER SERVICE
     
@@ -139,7 +140,7 @@ class UserService {
                 if let user = result?.user {
                     
                     print("[UserService - signUpEmailAndPassword] Se dio de alta el correo \(user.email!) y se le asignó el userID \(user.uid)")
-                    self?.signUpEmailAndPasswordSubject.send((user: user, error: nil))
+                    self?.signUpEmailAndPasswordSubject.send((user: (email, password, user.uid), error: nil))
                 } else {
                     
                     print("[UserService - signUpEmailAndPassword] No se pudo dar de alta correo \(email) en FireBase")
@@ -191,10 +192,10 @@ class UserService {
             
             [weak self] result, error in
             
-            if let error = error {
+            if let _ = error {
                 
                 print("[UserService - loginWithEmailAndPassword] No se pudo loguear al usuario \(email)")
-                self?.loginWithEmailAndPasswordSubject.send(completion: .failure(error as! UserService.UserServiceError))
+                self?.loginWithEmailAndPasswordSubject.send((activeUser: nil, error: .loginWithEmailAndPasswordError))
             } else {
                 
                 if let result = result {
@@ -202,7 +203,7 @@ class UserService {
                     guard let userEntityContext = self?.userEntityContainer.viewContext else {
                         
                         print("[UserService - loginWithEmailAndPassword] No se pudo recuperar el contexto de UserEntity")
-                        self?.loginWithEmailAndPasswordSubject.send(completion: .failure(.loginWithEmailAndPasswordErrorContextNil))
+                        self?.loginWithEmailAndPasswordSubject.send((activeUser: nil, error: .loginWithEmailAndPasswordContextNilError))
                         return }
                     
                     let requestUserEntity = UserEntity.fetchRequest()
@@ -211,16 +212,18 @@ class UserService {
                         
                         print("[UserService - loginWithEmailAndPassword] Iniciando sesión con el correo \(email)")
                         self?.activeUser = activeUser
-                        self?.loginWithEmailAndPasswordSubject.send(activeUser)
+                        self?.loginWithEmailAndPasswordSubject.send((activeUser, error: nil))
                     } else {
                         
+                        // TODO: SI EL USUARIO ESTÁ REGISTRADO, PERO NO TIENE PERFIL EN EL DISPOSITIVO ACTUAL, CREARLE UNO POR DEFECTO.
+                        
                         print("[UserService - loginWithEmailAndPassword] No existe perfil de usuario para el correo \(email)")
-                        self?.loginWithEmailAndPasswordSubject.send(completion: .failure(.loginWithEmailAndPasswordErrorProfileNil))
+                        self?.loginWithEmailAndPasswordSubject.send((activeUser: nil, error: .loginWithEmailAndPasswordProfileNilError))
                     }
                 } else {
                     
                     print("[UserService - loginWithEmailAndPassword] No hay resultados al tratar de loguear al usuario \(email)")
-                    self?.loginWithEmailAndPasswordSubject.send(completion: .failure(.loginWithEmailAndPasswordErrorResultNil))
+                    self?.loginWithEmailAndPasswordSubject.send((activeUser: nil, error: .loginWithEmailAndPasswordResultNilError))
                 }
             }
         }
@@ -336,11 +339,11 @@ class UserService {
     
     // Termina la sesión del usuario activo con un Logout e iguala el activeUser a nil
     func logoutActiveUser() {
-        
+                
         guard let _ = self.activeUser else {
             
             print("[UserService - logoutActiveUser] no existe usuario activo")
-            self.logoutActiveUserSubject.send(completion: .failure(.logoutActiveUserErrorActiveUserNil))
+            self.logoutActiveUserSubject.send((success: nil, error: .logoutActiveUserIsNilError))
             return
         }
         
@@ -348,12 +351,12 @@ class UserService {
             
             try Auth.auth().signOut()
             self.activeUser = nil
-            self.logoutActiveUserSubject.send(true)
+            self.logoutActiveUserSubject.send((success: true, error: nil))
             print("[UserService - logoutActiveUser] se cerró la sesión")
         } catch {
             
             print("[UserService - logoutActiveUser] error al cerrar sesión")
-            self.logoutActiveUserSubject.send(completion: .failure(.logoutActiveUserErrorLogoutFailed))
+            self.logoutActiveUserSubject.send((success: nil, error: .logoutFailedError))
         }
     }
     

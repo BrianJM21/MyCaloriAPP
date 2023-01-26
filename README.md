@@ -31,3 +31,4 @@ ChangeLog [yy/mm/dd] <dev name> - <change description>
 [25/01/23] <Eduardo> - <Diseño LoginA LoginB SigninA SigninB TouchId>
 [26/01/23] <Eduardo> - <Navigation y complementar diseño y vistas del flujo para login>
 [26/01/23] <Brian> - <UserService completado y comienzo de Pruebas Unitarias del mismo>
+[26/01/23] <Brian> - <Se crearon TabViewControllers del Home>
