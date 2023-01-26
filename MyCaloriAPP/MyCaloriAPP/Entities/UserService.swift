@@ -16,7 +16,8 @@ class UserService {
     enum UserServiceError: String, Error {
         
         case loadCoreDataUsersError = "Falló la carga del contexto del UserEntity"
-        case verifyEmailAlredySignedUpError = "Error, el correo no se encuetra en FireBase"
+        case emailNotFoundError = "Error: el correo no se encuetra registrado en FireBase"
+        case verifyEmailRequestError = "Error: solicitud de consulta invalida"
         case signUpEmailAndPasswordError = "No se pudo dar de alta el correo electrónico en FireBase, usuario regreso como nulo"
         case signUpUserProfileError = "Error al crear perfil de usuario, no se pudo guardar en el contexto del UserEntity"
         case loginWithEmailAndPasswordErrorContextNil = "Error al recuperar el contexto del UserEntity, valor es nulo"
@@ -37,31 +38,17 @@ class UserService {
     private var verifiedEmail: String?
     private var rememberedUser: UserEntity?
     
-    // Publicadores del UserService
-    var loadCoreDataUsersSubject = PassthroughSubject<[UserEntity], UserServiceError>()
-    var verifyEmailAlredySignedUpSubject = PassthroughSubject<String, UserServiceError>()
-    var signUpEmailAndPasswordSubject = PassthroughSubject<User, UserServiceError>()
-    var signUpUserProfileSubject = PassthroughSubject<UserEntity, UserServiceError>()
-    var loginWithEmailAndPasswordSubject = PassthroughSubject<UserEntity, UserServiceError>()
-    var userToggleRememberMeSubject = PassthroughSubject<UserEntity, UserServiceError>()
-    var userToggleTouchIdSubject = PassthroughSubject<UserEntity, UserServiceError>()
-    var isAUserRememberedSubject = PassthroughSubject<UserEntity, UserServiceError>()
-    var isUserTouchIdActiveSubject = PassthroughSubject<Bool, UserServiceError>()
-    var logoutActiveUserSubject = PassthroughSubject<Bool, UserServiceError>()
-    
-    // FUNCIONALIDADES DEL USER SERVICE
-    
     // Contenedor persistente del UserService
-    
     private lazy var userEntityContainer: NSPersistentContainer = {
         
-        let container = NSPersistentContainer(name: "MyCaloriAPP")
+        let container = NSPersistentContainer(name: "MyCaloriAP")
         
         container.loadPersistentStores {
             
             _, error in
             
             if let error = error {
+                
                 
                 fatalError("[UserService - userEntityContainer] El contenedor persistente no pudo ser creado")
             } else {
@@ -72,6 +59,20 @@ class UserService {
         
         return container
     }()
+    
+    // Publicadores del UserService
+    var loadCoreDataUsersSubject = PassthroughSubject<(users: [UserEntity]?, error: UserServiceError?), Never>()
+    var verifyEmailAlredySignedUpSubject = PassthroughSubject<(email: String?, error: UserServiceError?), Never>()
+    var signUpEmailAndPasswordSubject = PassthroughSubject<User, UserServiceError>()
+    var signUpUserProfileSubject = PassthroughSubject<UserEntity, UserServiceError>()
+    var loginWithEmailAndPasswordSubject = PassthroughSubject<UserEntity, UserServiceError>()
+    var userToggleRememberMeSubject = PassthroughSubject<UserEntity, UserServiceError>()
+    var userToggleTouchIdSubject = PassthroughSubject<UserEntity, UserServiceError>()
+    var isAUserRememberedSubject = PassthroughSubject<UserEntity, UserServiceError>()
+    var isUserTouchIdActiveSubject = PassthroughSubject<Bool, UserServiceError>()
+    var logoutActiveUserSubject = PassthroughSubject<Bool, UserServiceError>()
+    
+    // FUNCIONALIDADES DEL USER SERVICE
     
     // Recupera el contexto de UserEntity
     func loadCoreDataUsers() {
@@ -84,11 +85,11 @@ class UserService {
             
             print("[UserService - loadCoreDataUsers] Se cargó el contexto del UserEntity exitosamente")
             self.users = users
-            self.loadCoreDataUsersSubject.send(users)
+            self.loadCoreDataUsersSubject.send((users, nil))
         } else {
             
             print("[UserService - loadCoreDataUsers] Falló la carga del contexto del UserEntity")
-            self.loadCoreDataUsersSubject.send(completion: .failure(.loadCoreDataUsersError))
+            self.loadCoreDataUsersSubject.send((nil, UserServiceError.loadCoreDataUsersError))
         }
     }
     
@@ -103,18 +104,18 @@ class UserService {
             
             if let error = error {
                 
-                print("[UserService - verifyEmailAlredySignedUp] Error al tratar de verificar si el correo electrónico ya se encuentra registrado en FireBase \(error.localizedDescription)")
-                self?.verifyEmailAlredySignedUpSubject.send(completion: .failure(error as! UserService.UserServiceError))
+                print("[UserService - verifyEmailAlredySignedUp] Error al tratar de verificar si el correo electrónico ya se encuentra registrado en FireBase: \(error.localizedDescription)")
+                self?.verifyEmailAlredySignedUpSubject.send((nil, .verifyEmailRequestError))
             } else {
                 
                 if let _ = signInMethods {
                     
                     print("[UserService - verifyEmailAlredySignedUp] El correo ya se encuentra registrado en FireBase")
-                    self?.verifyEmailAlredySignedUpSubject.send(email)
+                    self?.verifyEmailAlredySignedUpSubject.send((email, nil))
                 } else {
                     
                     print("[UserService - verifyEmailAlredySignedUp] El correo no se encuentra registrado en FireBase")
-                    self?.verifyEmailAlredySignedUpSubject.send(completion: .failure(.verifyEmailAlredySignedUpError))
+                    self?.verifyEmailAlredySignedUpSubject.send((nil, .emailNotFoundError))
                 }
             }
         }

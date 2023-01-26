@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1020372982EDA700FDD5E3 /* UserServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1020362982EDA700FDD5E3 /* UserServiceTests.swift */; };
 		CE1912EC297F4EF1008E7228 /* MyCaloriAPP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE1912EA297F4EF1008E7228 /* MyCaloriAPP.xcdatamodeld */; };
 		CE1912EE297F4FDA008E7228 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1912ED297F4FDA008E7228 /* UserService.swift */; };
 		CE1912F0297F4FF9008E7228 /* DietService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1912EF297F4FF9008E7228 /* DietService.swift */; };
@@ -39,6 +40,8 @@
 		CE19132B297F5AB7008E7228 /* SigninBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19132A297F5AB7008E7228 /* SigninBView.swift */; };
 		CE19132E297F5ADB008E7228 /* SigninBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19132C297F5ADB008E7228 /* SigninBViewController.swift */; };
 		CE19132F297F5ADB008E7228 /* SigninBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE19132D297F5ADB008E7228 /* SigninBViewController.xib */; };
+		CE21529E2982D973007EE4EA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CE21529D2982D973007EE4EA /* FirebaseAuth */; };
+		CE2152A02982DA1E007EE4EA /* Combine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE21529F2982DA1E007EE4EA /* Combine.framework */; };
 		CE2D3B1F2981849D00918CC2 /* DefaultLoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D3B1E2981849D00918CC2 /* DefaultLoginPresenter.swift */; };
 		CE2D3B21298184C200918CC2 /* LoginAPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D3B20298184C200918CC2 /* LoginAPresenter.swift */; };
 		CE2D3B23298184D200918CC2 /* LoginBPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D3B22298184D200918CC2 /* LoginBPresenter.swift */; };
@@ -80,6 +83,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE1020362982EDA700FDD5E3 /* UserServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceTests.swift; sourceTree = "<group>"; };
 		CE1912EB297F4EF1008E7228 /* MyCaloriAPP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyCaloriAPP.xcdatamodel; sourceTree = "<group>"; };
 		CE1912ED297F4FDA008E7228 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		CE1912EF297F4FF9008E7228 /* DietService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietService.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 		CE19132A297F5AB7008E7228 /* SigninBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninBView.swift; sourceTree = "<group>"; };
 		CE19132C297F5ADB008E7228 /* SigninBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninBViewController.swift; sourceTree = "<group>"; };
 		CE19132D297F5ADB008E7228 /* SigninBViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SigninBViewController.xib; sourceTree = "<group>"; };
+		CE21529F2982DA1E007EE4EA /* Combine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Combine.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk/System/Library/Frameworks/Combine.framework; sourceTree = DEVELOPER_DIR; };
 		CE2D3B1E2981849D00918CC2 /* DefaultLoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLoginPresenter.swift; sourceTree = "<group>"; };
 		CE2D3B20298184C200918CC2 /* LoginAPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPresenter.swift; sourceTree = "<group>"; };
 		CE2D3B22298184D200918CC2 /* LoginBPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBPresenter.swift; sourceTree = "<group>"; };
@@ -151,6 +156,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE2152A02982DA1E007EE4EA /* Combine.framework in Frameworks */,
+				CE21529E2982D973007EE4EA /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +254,14 @@
 			path = LoginViews;
 			sourceTree = "<group>";
 		};
+		CE21529C2982D973007EE4EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE21529F2982DA1E007EE4EA /* Combine.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CEC2C6F52979CB02005818D2 = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +269,7 @@
 				CEC2C7172979CB05005818D2 /* MyCaloriAPPTests */,
 				CEC2C7212979CB05005818D2 /* MyCaloriAPPUITests */,
 				CEC2C6FF2979CB02005818D2 /* Products */,
+				CE21529C2982D973007EE4EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -291,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				CEC2C7182979CB05005818D2 /* MyCaloriAPPTests.swift */,
+				CE1020362982EDA700FDD5E3 /* UserServiceTests.swift */,
 			);
 			path = MyCaloriAPPTests;
 			sourceTree = "<group>";
@@ -343,6 +360,9 @@
 				CEC2C7162979CB05005818D2 /* PBXTargetDependency */,
 			);
 			name = MyCaloriAPPTests;
+			packageProductDependencies = (
+				CE21529D2982D973007EE4EA /* FirebaseAuth */,
+			);
 			productName = MyCaloriAPPTests;
 			productReference = CEC2C7142979CB05005818D2 /* MyCaloriAPPTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -494,6 +514,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1020372982EDA700FDD5E3 /* UserServiceTests.swift in Sources */,
 				CEC2C7192979CB05005818D2 /* MyCaloriAPPTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -837,6 +858,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CE21529D2982D973007EE4EA /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEA8DE00297B4A4B0043A0B0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
 		CEA8DE01297B4A4B0043A0B0 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CEA8DE00297B4A4B0043A0B0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
