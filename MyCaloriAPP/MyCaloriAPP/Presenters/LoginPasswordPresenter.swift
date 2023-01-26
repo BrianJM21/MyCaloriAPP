@@ -38,4 +38,12 @@ class LoginPasswordPresenter {
         self.interactor = nil
         
     }
+    
+    func gotoHome() {
+        self.router?.openHome()
+    }
+    
+    func gotoDefaultLogin() {
+        self.router?.backToDefaultLogin()
+    }
 }

@@ -38,5 +38,15 @@ class LoginAPresenter {
         self.interactor = nil
         
     }
+
+    // Operations
+    
+    func gotoSigninA() {
+        self.router?.openSigninA()
+    }
+    
+    func gotoLoginB() {
+        self.router?.openLoginB()
+    }
     
 }

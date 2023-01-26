@@ -35,5 +35,22 @@ class DefaultLoginPresenter {
         self.interactor = nil
     }
     
+    // Operations
+    
+    func gotoLoginPassword() {
+        self.router?.openLoginPassword()
+    }
+    
+    func gotoLoginTouchId() {
+        self.router?.openLoginTouchId()
+    }
+    
+    func gotoLoginA() {
+        self.router?.openLoginA()
+    }
+    
+    func gotoSigninA() {
+        self.router?.openSigninA()
+    }
     
 }

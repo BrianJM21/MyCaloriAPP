@@ -38,4 +38,16 @@ class LoginTouchIdPresenter {
         
     }
     
+    func gotoLoginPassword() {
+        self.router?.openLoginPassword()
+    }
+    
+    func gotoHome() {
+        self.router?.openHome()
+    }
+    
+    func gotoDefaultLogin() {
+        self.router?.backToDefaultLogin()
+    }
+    
 }

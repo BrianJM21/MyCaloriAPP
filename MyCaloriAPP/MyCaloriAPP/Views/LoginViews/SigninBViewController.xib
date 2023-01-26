@@ -105,6 +105,11 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Altura en Centímetros" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5cm-bY-apT">
                                                     <rect key="frame" x="0.0" y="75" width="340" height="60"/>
@@ -115,6 +120,11 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </textField>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="pp4-bM-xFY">
                                                     <rect key="frame" x="0.0" y="150" width="279.66666666666669" height="35"/>
@@ -143,6 +153,11 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PvR-fj-rVZ">
                                                     <rect key="frame" x="0.0" y="275" width="340" height="60"/>
@@ -154,18 +169,36 @@
                                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Continuar"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="continueAction:" destination="-1" eventType="touchUpInside" id="qj8-Ij-nAg"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
                                     </subviews>
                                 </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04o-sV-D39">
+                                    <rect key="frame" x="150.33333333333334" y="665.66666666666663" width="92.333333333333343" height="34.333333333333371"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Regresar"/>
+                                    <connections>
+                                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="GME-r6-Lr7"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="81F-19-Qpv" firstAttribute="centerX" secondItem="bdb-79-kxK" secondAttribute="centerX" id="63e-s9-q2W"/>
                                 <constraint firstItem="6Pm-LZ-LGi" firstAttribute="top" secondItem="81F-19-Qpv" secondAttribute="bottom" constant="40" id="BWD-N0-QBq"/>
                                 <constraint firstItem="6Pm-LZ-LGi" firstAttribute="centerX" secondItem="bdb-79-kxK" secondAttribute="centerX" id="J39-mt-SIa"/>
+                                <constraint firstItem="04o-sV-D39" firstAttribute="centerX" secondItem="bdb-79-kxK" secondAttribute="centerX" id="OHk-pr-CTd"/>
                                 <constraint firstItem="81F-19-Qpv" firstAttribute="top" secondItem="bdb-79-kxK" secondAttribute="top" constant="40" id="hY9-pl-QR2"/>
+                                <constraint firstAttribute="bottom" secondItem="04o-sV-D39" secondAttribute="bottom" constant="20" id="u2O-94-Eov"/>
                                 <constraint firstAttribute="height" constant="720" id="ynv-ah-vME"/>
                             </constraints>
                         </view>

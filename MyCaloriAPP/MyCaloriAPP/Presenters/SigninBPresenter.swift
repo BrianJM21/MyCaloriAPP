@@ -36,4 +36,12 @@ class SigninBPresenter {
         self.interactor = nil
         
     }
+    
+    func gotoLoginPassword() {
+        self.router?.openLoginPassword()
+    }
+    
+    func gotoSigninA() {
+        self.router?.closeSigninB()
+    }
 }

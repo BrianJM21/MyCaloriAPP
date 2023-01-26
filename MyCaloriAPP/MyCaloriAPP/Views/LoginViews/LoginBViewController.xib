@@ -23,7 +23,7 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GWA-Dp-dbK">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="780"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="720"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My CaloriAPP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzW-ml-BcZ">
                                     <rect key="frame" x="101" y="140" width="191" height="36"/>
@@ -44,6 +44,12 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </label>
                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3cw-g2-YsZ">
                                             <rect key="frame" x="0.0" y="74" width="340" height="60"/>
@@ -54,6 +60,11 @@
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAZ-PH-vAP">
                                             <rect key="frame" x="0.0" y="148" width="340" height="60"/>
@@ -65,15 +76,26 @@
                                             <color key="tintColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Acceder"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="loginAction:" destination="-1" eventType="touchUpInside" id="fEi-V9-1ps"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Elz-gq-dcY">
-                                    <rect key="frame" x="81" y="725.66666666666663" width="231" height="34.333333333333371"/>
+                                    <rect key="frame" x="81" y="665.66666666666663" width="231" height="34.333333333333371"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Cambiar correo electronico"/>
+                                    <connections>
+                                        <action selector="changeEmailAction:" destination="-1" eventType="touchUpInside" id="6iG-xx-Cyt"/>
+                                    </connections>
                                 </button>
-                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tyB-jR-EBf">
+                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tyB-jR-EBf">
                                     <rect key="frame" x="26.666666666666671" y="454" width="51" height="31"/>
                                 </switch>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recordarme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hj-my-PzF">
@@ -88,7 +110,7 @@
                                 <constraint firstItem="JOk-35-MnV" firstAttribute="top" secondItem="hzW-ml-BcZ" secondAttribute="bottom" constant="60" id="4kQ-su-6R6"/>
                                 <constraint firstItem="hzW-ml-BcZ" firstAttribute="centerX" secondItem="GWA-Dp-dbK" secondAttribute="centerX" id="Bvt-gN-emx"/>
                                 <constraint firstItem="Elz-gq-dcY" firstAttribute="centerX" secondItem="GWA-Dp-dbK" secondAttribute="centerX" id="D8a-dc-1jW"/>
-                                <constraint firstAttribute="height" constant="780" id="EVI-yc-JRi"/>
+                                <constraint firstAttribute="height" constant="720" id="EVI-yc-JRi"/>
                                 <constraint firstItem="tyB-jR-EBf" firstAttribute="leading" secondItem="JOk-35-MnV" secondAttribute="leading" id="EeI-St-qBg"/>
                                 <constraint firstItem="JOk-35-MnV" firstAttribute="centerX" secondItem="GWA-Dp-dbK" secondAttribute="centerX" id="IiP-L0-XFD"/>
                                 <constraint firstItem="hzW-ml-BcZ" firstAttribute="top" secondItem="GWA-Dp-dbK" secondAttribute="top" constant="140" id="MxG-ay-gJ0"/>
