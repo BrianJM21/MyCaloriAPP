@@ -39,4 +39,12 @@ class LoginBPresenter {
         
     }
     
+    func gotoHome() {
+        self.router?.openHome()
+    }
+    
+    func closeLoginB() {
+        self.router?.closeLoginB()
+    }
+    
 }

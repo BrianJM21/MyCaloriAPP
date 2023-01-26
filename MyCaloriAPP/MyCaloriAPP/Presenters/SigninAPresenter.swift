@@ -36,7 +36,13 @@ class SigninAPresenter {
         
         self.interactor = nil
         
-    }    // Connects & Disconnects
+    }    
     
+    func gotoSigninB() {
+        self.router?.openSigninB()
+    }
     
+    func gotoLoginA() {
+        self.router?.closeSigninA()
+    }
 }

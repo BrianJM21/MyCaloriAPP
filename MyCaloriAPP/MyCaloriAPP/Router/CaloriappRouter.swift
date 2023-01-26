@@ -70,13 +70,23 @@ class CaloriappRouter: NSObject, UINavigationControllerDelegate {
         return presenter
     }()
     
+    lazy var homePresenter: HomePresenter = {
+       let presenter = HomePresenter()
+        presenter.router = self
+        return presenter
+    }()
+    
     // Navigations
     
-    func goToDefaultLogin() {
+    func openDefaultLogin() {
         
         self.defaultLoginPresenter.connectInteractor(interactor: self.userInteractor)
         self.navigationController.pushViewController(defaultLoginPresenter.viewController, animated: true)
         
+    }
+    
+    func backToDefaultLogin() {
+        self.navigationController.popToRootViewController(animated: true)
     }
     
     func closeDefaultLogin() {
@@ -84,7 +94,7 @@ class CaloriappRouter: NSObject, UINavigationControllerDelegate {
         self.defaultLoginPresenter.disconnectInteractor()
     }
     
-    func goToLoginA() {
+    func openLoginA() {
         self.loginAPresenter.connectInteractor(interactor: self.userInteractor)
         self.navigationController.pushViewController(loginAPresenter.viewController, animated: true)
     }
@@ -94,7 +104,7 @@ class CaloriappRouter: NSObject, UINavigationControllerDelegate {
         self.loginAPresenter.disconnectInteractor()
     }
     
-    func goToLoginB() {
+    func openLoginB() {
         self.loginBpresenter.connectInteractor(interactor: self.userInteractor)
         self.navigationController.pushViewController(loginBpresenter.viewController, animated: true)
     }
@@ -104,7 +114,7 @@ class CaloriappRouter: NSObject, UINavigationControllerDelegate {
         self.loginBpresenter.disconnectInteractor()
     }
     
-    func goToLoginTouchId() {
+    func openLoginTouchId() {
         self.loginTouchIdPresenter.connectInteractor(interactor: self.userInteractor)
         self.navigationController.pushViewController(loginTouchIdPresenter.viewController, animated: true)
     }
@@ -114,7 +124,7 @@ class CaloriappRouter: NSObject, UINavigationControllerDelegate {
         self.loginTouchIdPresenter.disconnectInteractor()
     }
     
-    func gotoLoginPassword() {
+    func openLoginPassword() {
         self.loginPasswordPresenter.connectInteractor(interactor: self.userInteractor)
         self.navigationController.pushViewController(loginPasswordPresenter.viewController, animated: true)
     }
@@ -124,7 +134,7 @@ class CaloriappRouter: NSObject, UINavigationControllerDelegate {
         self.loginPasswordPresenter.disconnectInteractor()
     }
     
-    func gotoSigninA() {
+    func openSigninA() {
         self.signinAPresenter.connectInteractor(interactor: self.userInteractor)
         self.navigationController.pushViewController(signinAPresenter.viewController, animated: true)
     }
@@ -134,7 +144,7 @@ class CaloriappRouter: NSObject, UINavigationControllerDelegate {
         self.signinAPresenter.disconnectInteractor()
     }
     
-    func gotoSigninB() {
+    func openSigninB() {
         self.signinBPresenter.connectInteractor(interactor: self.userInteractor)
         self.navigationController.pushViewController(signinBPresenter.viewController, animated: true)
     }
@@ -144,4 +154,8 @@ class CaloriappRouter: NSObject, UINavigationControllerDelegate {
         self.signinBPresenter.disconnectInteractor()
     }
     
+    func openHome() {
+        self.homePresenter.connectInteractor(interactor: self.userInteractor)
+        self.navigationController.pushViewController(homePresenter.viewController, animated: true)
+    }
 }

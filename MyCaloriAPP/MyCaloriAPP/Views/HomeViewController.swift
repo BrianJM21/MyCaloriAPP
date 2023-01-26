@@ -9,10 +9,16 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    weak var presenter: HomePresenter?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
     }
 
+}
+
+extension HomeViewController: HomeView {
+    
 }
