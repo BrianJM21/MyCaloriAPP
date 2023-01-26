@@ -15,10 +15,11 @@ class UserService {
     // Enums del UserService
     enum UserServiceError: String, Error {
         
-        case loadCoreDataUsersError = "Falló la carga del contexto del UserEntity"
+        case contextRequestError = "Falló la carga del contexto del UserEntity"
         case emailNotFoundError = "Error: el correo no se encuetra registrado en FireBase"
         case verifyEmailRequestError = "Error: solicitud de consulta invalida"
-        case signUpEmailAndPasswordError = "No se pudo dar de alta el correo electrónico en FireBase, usuario regreso como nulo"
+        case signUpRequestError = "Error: solicitud invalida al tratar de dar de alta correo y contraseña en FireBase"
+        case signUpResponseError = "No se pudo dar de alta el correo electrónico en FireBase, usuario regresó como nulo"
         case signUpUserProfileError = "Error al crear perfil de usuario, no se pudo guardar en el contexto del UserEntity"
         case loginWithEmailAndPasswordErrorContextNil = "Error al recuperar el contexto del UserEntity, valor es nulo"
         case loginWithEmailAndPasswordErrorResultNil = "Error al loguear al usuario en FireBase, el resultado es nulo"
@@ -41,7 +42,7 @@ class UserService {
     // Contenedor persistente del UserService
     private lazy var userEntityContainer: NSPersistentContainer = {
         
-        let container = NSPersistentContainer(name: "MyCaloriAP")
+        let container = NSPersistentContainer(name: "MyCaloriAPP")
         
         container.loadPersistentStores {
             
@@ -63,8 +64,8 @@ class UserService {
     // Publicadores del UserService
     var loadCoreDataUsersSubject = PassthroughSubject<(users: [UserEntity]?, error: UserServiceError?), Never>()
     var verifyEmailAlredySignedUpSubject = PassthroughSubject<(email: String?, error: UserServiceError?), Never>()
-    var signUpEmailAndPasswordSubject = PassthroughSubject<User, UserServiceError>()
-    var signUpUserProfileSubject = PassthroughSubject<UserEntity, UserServiceError>()
+    var signUpEmailAndPasswordSubject = PassthroughSubject<(user: FirebaseAuth.User?, error: UserServiceError?), Never>()
+    var signUpUserProfileSubject = PassthroughSubject<(user: UserEntity?, error: UserServiceError?), Never>()
     var loginWithEmailAndPasswordSubject = PassthroughSubject<UserEntity, UserServiceError>()
     var userToggleRememberMeSubject = PassthroughSubject<UserEntity, UserServiceError>()
     var userToggleTouchIdSubject = PassthroughSubject<UserEntity, UserServiceError>()
@@ -85,11 +86,11 @@ class UserService {
             
             print("[UserService - loadCoreDataUsers] Se cargó el contexto del UserEntity exitosamente")
             self.users = users
-            self.loadCoreDataUsersSubject.send((users, nil))
+            self.loadCoreDataUsersSubject.send((users: users, error: nil))
         } else {
             
             print("[UserService - loadCoreDataUsers] Falló la carga del contexto del UserEntity")
-            self.loadCoreDataUsersSubject.send((nil, UserServiceError.loadCoreDataUsersError))
+            self.loadCoreDataUsersSubject.send((users: nil, error: UserServiceError.contextRequestError))
         }
     }
     
@@ -105,17 +106,17 @@ class UserService {
             if let error = error {
                 
                 print("[UserService - verifyEmailAlredySignedUp] Error al tratar de verificar si el correo electrónico ya se encuentra registrado en FireBase: \(error.localizedDescription)")
-                self?.verifyEmailAlredySignedUpSubject.send((nil, .verifyEmailRequestError))
+                self?.verifyEmailAlredySignedUpSubject.send((email: nil, error: .verifyEmailRequestError))
             } else {
                 
                 if let _ = signInMethods {
                     
                     print("[UserService - verifyEmailAlredySignedUp] El correo ya se encuentra registrado en FireBase")
-                    self?.verifyEmailAlredySignedUpSubject.send((email, nil))
+                    self?.verifyEmailAlredySignedUpSubject.send((email: email, error: nil))
                 } else {
                     
                     print("[UserService - verifyEmailAlredySignedUp] El correo no se encuentra registrado en FireBase")
-                    self?.verifyEmailAlredySignedUpSubject.send((nil, .emailNotFoundError))
+                    self?.verifyEmailAlredySignedUpSubject.send((email: nil, error: .emailNotFoundError))
                 }
             }
         }
@@ -132,17 +133,17 @@ class UserService {
             if let error = error {
                 
                 print("[UserService - signUpEmailAndPassword] Error al tratar de dar de alta correo y contraseña en FireBase \(error.localizedDescription)")
-                self?.signUpEmailAndPasswordSubject.send(completion: .failure(error as! UserService.UserServiceError))
+                self?.signUpEmailAndPasswordSubject.send((user: nil, error: .signUpRequestError))
             } else {
                 
                 if let user = result?.user {
                     
                     print("[UserService - signUpEmailAndPassword] Se dio de alta el correo \(user.email!) y se le asignó el userID \(user.uid)")
-                    self?.signUpEmailAndPasswordSubject.send(user)
+                    self?.signUpEmailAndPasswordSubject.send((user: user, error: nil))
                 } else {
                     
                     print("[UserService - signUpEmailAndPassword] No se pudo dar de alta correo \(email) en FireBase")
-                    self?.signUpEmailAndPasswordSubject.send(completion: .failure(.signUpEmailAndPasswordError))
+                    self?.signUpEmailAndPasswordSubject.send((user: nil, error: .signUpResponseError))
                 }
             }
         }
@@ -173,12 +174,12 @@ class UserService {
             
             try userEntityContext.save()
             print("[UserService - signUpUserProfile] Se creó el perfil de usuario \(userName)")
-            self.signUpUserProfileSubject.send(user)
+            self.signUpUserProfileSubject.send((user: user, error: nil))
         } catch {
             
             userEntityContext.rollback()
             print("[UserService - signUpUserProfile] No se pudo crear el perfil de usuario \(userName)")
-            self.signUpUserProfileSubject.send(completion: .failure(.signUpUserProfileError))
+            self.signUpUserProfileSubject.send((user: nil, error: .signUpUserProfileError))
         }
     }
     

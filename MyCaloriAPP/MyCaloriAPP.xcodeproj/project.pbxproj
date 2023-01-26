@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		CE1020372982EDA700FDD5E3 /* UserServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1020362982EDA700FDD5E3 /* UserServiceTests.swift */; };
+		CE10203A2983083100FDD5E3 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1020392983083100FDD5E3 /* HomeTabBarController.swift */; };
+		CE10203D2983087600FDD5E3 /* MyDietsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10203B2983087600FDD5E3 /* MyDietsViewController.swift */; };
+		CE10203E2983087600FDD5E3 /* MyDietsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE10203C2983087600FDD5E3 /* MyDietsViewController.xib */; };
+		CE102041298308AE00FDD5E3 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10203F298308AE00FDD5E3 /* MyProfileViewController.swift */; };
+		CE102042298308AE00FDD5E3 /* MyProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE102040298308AE00FDD5E3 /* MyProfileViewController.xib */; };
+		CE102045298308C500FDD5E3 /* MySettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE102043298308C500FDD5E3 /* MySettingViewController.swift */; };
+		CE102046298308C500FDD5E3 /* MySettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE102044298308C500FDD5E3 /* MySettingViewController.xib */; };
 		CE1912EC297F4EF1008E7228 /* MyCaloriAPP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE1912EA297F4EF1008E7228 /* MyCaloriAPP.xcdatamodeld */; };
 		CE1912EE297F4FDA008E7228 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1912ED297F4FDA008E7228 /* UserService.swift */; };
 		CE1912F0297F4FF9008E7228 /* DietService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1912EF297F4FF9008E7228 /* DietService.swift */; };
@@ -59,7 +66,6 @@
 		CEC2C7092979CB03005818D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC2C7072979CB03005818D2 /* Main.storyboard */; };
 		CEC2C70B2979CB04005818D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC2C70A2979CB04005818D2 /* Assets.xcassets */; };
 		CEC2C70E2979CB04005818D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC2C70C2979CB04005818D2 /* LaunchScreen.storyboard */; };
-		CEC2C7192979CB05005818D2 /* MyCaloriAPPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2C7182979CB05005818D2 /* MyCaloriAPPTests.swift */; };
 		CEC2C7232979CB05005818D2 /* MyCaloriAPPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2C7222979CB05005818D2 /* MyCaloriAPPUITests.swift */; };
 		CEC2C7252979CB05005818D2 /* MyCaloriAPPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2C7242979CB05005818D2 /* MyCaloriAPPUITestsLaunchTests.swift */; };
 		CEE5583F298043ED002F4237 /* ApiResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5583E298043ED002F4237 /* ApiResponseEntity.swift */; };
@@ -84,6 +90,13 @@
 
 /* Begin PBXFileReference section */
 		CE1020362982EDA700FDD5E3 /* UserServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceTests.swift; sourceTree = "<group>"; };
+		CE1020392983083100FDD5E3 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
+		CE10203B2983087600FDD5E3 /* MyDietsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDietsViewController.swift; sourceTree = "<group>"; };
+		CE10203C2983087600FDD5E3 /* MyDietsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyDietsViewController.xib; sourceTree = "<group>"; };
+		CE10203F298308AE00FDD5E3 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		CE102040298308AE00FDD5E3 /* MyProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProfileViewController.xib; sourceTree = "<group>"; };
+		CE102043298308C500FDD5E3 /* MySettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySettingViewController.swift; sourceTree = "<group>"; };
+		CE102044298308C500FDD5E3 /* MySettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MySettingViewController.xib; sourceTree = "<group>"; };
 		CE1912EB297F4EF1008E7228 /* MyCaloriAPP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyCaloriAPP.xcdatamodel; sourceTree = "<group>"; };
 		CE1912ED297F4FDA008E7228 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		CE1912EF297F4FF9008E7228 /* DietService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietService.swift; sourceTree = "<group>"; };
@@ -134,7 +147,6 @@
 		CEC2C70D2979CB04005818D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEC2C70F2979CB04005818D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEC2C7142979CB05005818D2 /* MyCaloriAPPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyCaloriAPPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEC2C7182979CB05005818D2 /* MyCaloriAPPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCaloriAPPTests.swift; sourceTree = "<group>"; };
 		CEC2C71E2979CB05005818D2 /* MyCaloriAPPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyCaloriAPPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC2C7222979CB05005818D2 /* MyCaloriAPPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCaloriAPPUITests.swift; sourceTree = "<group>"; };
 		CEC2C7242979CB05005818D2 /* MyCaloriAPPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCaloriAPPUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -171,6 +183,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE102038298307AF00FDD5E3 /* HomeViews */ = {
+			isa = PBXGroup;
+			children = (
+				CE1912FD297F54CE008E7228 /* HomeView.swift */,
+				CE1912FF297F5514008E7228 /* HomeViewController.swift */,
+				CE191300297F5514008E7228 /* HomeViewController.xib */,
+				CE1020392983083100FDD5E3 /* HomeTabBarController.swift */,
+				CE10203B2983087600FDD5E3 /* MyDietsViewController.swift */,
+				CE10203C2983087600FDD5E3 /* MyDietsViewController.xib */,
+				CE10203F298308AE00FDD5E3 /* MyProfileViewController.swift */,
+				CE102040298308AE00FDD5E3 /* MyProfileViewController.xib */,
+				CE102043298308C500FDD5E3 /* MySettingViewController.swift */,
+				CE102044298308C500FDD5E3 /* MySettingViewController.xib */,
+			);
+			path = HomeViews;
+			sourceTree = "<group>";
+		};
 		CE1912E6297F4E7C008E7228 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,10 +239,8 @@
 		CE1912F5297F52F8008E7228 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CE102038298307AF00FDD5E3 /* HomeViews */,
 				CE191313297F5928008E7228 /* LoginViews */,
-				CE1912FD297F54CE008E7228 /* HomeView.swift */,
-				CE1912FF297F5514008E7228 /* HomeViewController.swift */,
-				CE191300297F5514008E7228 /* HomeViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -306,7 +333,6 @@
 		CEC2C7172979CB05005818D2 /* MyCaloriAPPTests */ = {
 			isa = PBXGroup;
 			children = (
-				CEC2C7182979CB05005818D2 /* MyCaloriAPPTests.swift */,
 				CE1020362982EDA700FDD5E3 /* UserServiceTests.swift */,
 			);
 			path = MyCaloriAPPTests;
@@ -440,10 +466,13 @@
 				CE191310297F58FC008E7228 /* LoginAViewController.xib in Resources */,
 				CEA8DE08297B4B2B0043A0B0 /* GoogleService-Info.plist in Resources */,
 				CE19132F297F5ADB008E7228 /* SigninBViewController.xib in Resources */,
+				CE102046298308C500FDD5E3 /* MySettingViewController.xib in Resources */,
+				CE102042298308AE00FDD5E3 /* MyProfileViewController.xib in Resources */,
 				CE191329297F5A99008E7228 /* SigninAViewController.xib in Resources */,
 				CE191317297F5972008E7228 /* LoginBViewController.xib in Resources */,
 				CE19130A297F58BD008E7228 /* DefaultLoginViewController.xib in Resources */,
 				CE191302297F5514008E7228 /* HomeViewController.xib in Resources */,
+				CE10203E2983087600FDD5E3 /* MyDietsViewController.xib in Resources */,
 				CEC2C70B2979CB04005818D2 /* Assets.xcassets in Resources */,
 				CEC2C7092979CB03005818D2 /* Main.storyboard in Resources */,
 				CE19131D297F59C6008E7228 /* LoginPasswordViewController.xib in Resources */,
@@ -478,14 +507,18 @@
 				CE19130C297F58E3008E7228 /* LoginAView.swift in Sources */,
 				CE191309297F58BD008E7228 /* DefaultLoginViewController.swift in Sources */,
 				CE2D3B1F2981849D00918CC2 /* DefaultLoginPresenter.swift in Sources */,
+				CE102045298308C500FDD5E3 /* MySettingViewController.swift in Sources */,
 				CEC2C7062979CB03005818D2 /* ViewController.swift in Sources */,
 				CE2D3B272981851400918CC2 /* LoginTouchIdPresenter.swift in Sources */,
 				CE1912F8297F5454008E7228 /* UserInteractor.swift in Sources */,
 				CE1912F2297F51EC008E7228 /* UserFoodEntity.swift in Sources */,
 				CE1912FC297F54A9008E7228 /* HomePresenter.swift in Sources */,
+				CE10203D2983087600FDD5E3 /* MyDietsViewController.swift in Sources */,
+				CE102041298308AE00FDD5E3 /* MyProfileViewController.swift in Sources */,
 				CE19132B297F5AB7008E7228 /* SigninBView.swift in Sources */,
 				CE2D3B292981853800918CC2 /* SigninAPresenter.swift in Sources */,
 				CE1912FA297F5477008E7228 /* DietInteractor.swift in Sources */,
+				CE10203A2983083100FDD5E3 /* HomeTabBarController.swift in Sources */,
 				CE2D3B21298184C200918CC2 /* LoginAPresenter.swift in Sources */,
 				CE2D3B23298184D200918CC2 /* LoginBPresenter.swift in Sources */,
 				CE1912FE297F54CE008E7228 /* HomeView.swift in Sources */,
@@ -515,7 +548,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1020372982EDA700FDD5E3 /* UserServiceTests.swift in Sources */,
-				CEC2C7192979CB05005818D2 /* MyCaloriAPPTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

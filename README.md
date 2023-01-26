@@ -29,3 +29,5 @@ ChangeLog [yy/mm/dd] <dev name> - <change description>
 [25/01/23] <Brian> - <Se crearon las clases de los Presenters para las vistas de LogIn y Resgistro>
 [25/01/23] <Brian> - <Actualización mayor al UserService, enum de errores, sujetos publicadores y funcionalidades del login>
 [25/01/23] <Eduardo> - <Diseño LoginA LoginB SigninA SigninB TouchId>
+[26/01/23] <Eduardo> - <Navigation y complementar diseño y vistas del flujo para login>
+[26/01/23] <Brian> - <UserService completado y comienzo de Pruebas Unitarias del mismo>
