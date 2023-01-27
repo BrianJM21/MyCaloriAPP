@@ -11,8 +11,7 @@ class DefaultLoginViewController: UIViewController {
     
     weak var presenter: DefaultLoginPresenter?
     
-    //let touchID = true
-    let rememberMe = true
+    let touchID = true
     
     
     override func viewDidLoad() {
@@ -23,7 +22,7 @@ class DefaultLoginViewController: UIViewController {
 
     
     @IBAction func loginAction(_ sender: Any) {
-        if rememberMe {
+        if touchID {
             self.presenter?.gotoLoginPassword()
         } else {
             self.presenter?.gotoLoginA()

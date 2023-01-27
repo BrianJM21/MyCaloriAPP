@@ -40,7 +40,7 @@ class LoginBPresenter {
     }
     
     func gotoHome() {
-        self.router?.openHome()
+        self.router?.openHomeTabBar()
     }
     
     func closeLoginB() {
