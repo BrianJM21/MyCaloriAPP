@@ -28,6 +28,13 @@ class CaloriappRouter: NSObject, UINavigationControllerDelegate {
     }()
     
     // Presenters
+    
+    lazy var homeTabBarPresenter: HomeTabBarPresenter = {
+        let homeTabBarPresenter = HomeTabBarPresenter()
+        homeTabBarPresenter.interactor = self.userInteractor
+        return homeTabBarPresenter
+    }()
+    
     lazy var defaultLoginPresenter: DefaultLoginPresenter = {
         let presenter = DefaultLoginPresenter()
         presenter.router = self
@@ -65,13 +72,13 @@ class CaloriappRouter: NSObject, UINavigationControllerDelegate {
     }()
     
     lazy var signinBPresenter: SigninBPresenter = {
-       let presenter = SigninBPresenter()
+        let presenter = SigninBPresenter()
         presenter.router = self
         return presenter
     }()
     
     lazy var homePresenter: HomePresenter = {
-       let presenter = HomePresenter()
+        let presenter = HomePresenter()
         presenter.router = self
         return presenter
     }()
@@ -157,5 +164,21 @@ class CaloriappRouter: NSObject, UINavigationControllerDelegate {
     func openHome() {
         self.homePresenter.connectInteractor(interactor: self.userInteractor)
         self.navigationController.pushViewController(homePresenter.viewController, animated: true)
+    }
+    
+    func closeHome() {
+        self.navigationController.popViewController(animated: true)
+        self.homePresenter.disconnectInteractor()
+    }
+    
+    func openHomeTabBar() {
+        self.homeTabBarPresenter.connectInteractor(interactor: self.userInteractor)
+        //self.navigationController.pushViewController(homeTabBarPresenter.tabBarController, animated: true)
+        self.navigationController.setViewControllers([homeTabBarPresenter.tabBarController], animated: true)
+    }
+    
+    func closeHomeTabBar() {
+        self.navigationController.popViewController(animated: true)
+        self.homeTabBarPresenter.disconnectInteractor()
     }
 }

@@ -40,7 +40,7 @@ class LoginPasswordPresenter {
     }
     
     func gotoHome() {
-        self.router?.openHome()
+        self.router?.openHomeTabBar()
     }
     
     func gotoDefaultLogin() {

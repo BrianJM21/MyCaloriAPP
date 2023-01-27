@@ -40,3 +40,39 @@ class HomePresenter {
     }
     
 }
+
+
+class HomeTabBarPresenter {
+    // Router
+    weak var router: CaloriappRouter?
+    
+    // Interactor
+    weak var interactor: UserInteractor?
+    
+    // View & ViewController
+    //weak var view: HomeView?
+    
+    lazy var tabBarController: HomeTabBarController = {
+        
+        let tabBarController = HomeTabBarController()
+        tabBarController.presenter = self
+        tabBarController.interactor = self.interactor
+      //  self.view = viewController
+        return tabBarController
+    }()
+    
+    // Connects & Disconnects
+    
+    func connectInteractor(interactor: UserInteractor) {
+        
+        self.interactor = interactor
+   
+    }
+    
+    func disconnectInteractor() {
+        
+        self.interactor = nil
+        
+    }
+    
+}
